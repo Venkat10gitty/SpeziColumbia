@@ -67,6 +67,9 @@
         }
       }
     },
+    "AI Assistant Setup" : {
+
+    },
     "Allow Notifications" : {
       "localizations" : {
         "de" : {
@@ -89,6 +92,18 @@
         }
       }
     },
+    "API Key" : {
+
+    },
+    "Assistant" : {
+
+    },
+    "Changes apply immediately for the next uploads." : {
+
+    },
+    "Clear Saved Key" : {
+
+    },
     "Close" : {
       "localizations" : {
         "de" : {
@@ -110,6 +125,9 @@
           }
         }
       }
+    },
+    "Consent" : {
+
     },
     "CONSENT_LOADING_ERROR" : {
       "localizations" : {
@@ -176,6 +194,12 @@
           }
         }
       }
+    },
+    "Data Destination" : {
+
+    },
+    "Devices" : {
+
     },
     "Grant Access" : {
       "localizations" : {
@@ -308,6 +332,9 @@
           }
         }
       }
+    },
+    "I Agree" : {
+
     },
     "Interesting Modules" : {
       "localizations" : {
@@ -595,6 +622,9 @@
         }
       }
     },
+    "OpenAI API Key" : {
+
+    },
     "Please fill out the Social Support Questionnaire every day." : {
       "localizations" : {
         "de" : {
@@ -617,6 +647,12 @@
         }
       }
     },
+    "Please read and accept the consent form." : {
+
+    },
+    "Save Key" : {
+
+    },
     "Schedule" : {
       "localizations" : {
         "de" : {
@@ -638,6 +674,12 @@
           }
         }
       }
+    },
+    "Settings" : {
+
+    },
+    "sk-..." : {
+
     },
     "Social Support Questionnaire" : {
       "localizations" : {
@@ -815,6 +857,9 @@
         }
       }
     },
+    "Turn on your Omron device and put it in pairing mode. Then tap + to add it." : {
+
+    },
     "Unsupported Event" : {
       "localizations" : {
         "de" : {
@@ -836,6 +881,9 @@
           }
         }
       }
+    },
+    "Upload to" : {
+
     },
     "WELCOME_AREA1_DESCRIPTION" : {
       "localizations" : {
@@ -946,6 +994,9 @@
           }
         }
       }
+    },
+    "Your key is stored locally on device and never transmitted except to OpenAI." : {
+
     }
   },
   "version" : "1.0"

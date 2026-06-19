@@ -7,42 +7,50 @@
 //
 
 import SpeziOnboarding
+import SpeziViews
 import SwiftUI
 
 
-/// - Note: The `OnboardingConsentView` exports the signed consent form as PDF to the Spezi `Standard`, necessitating the conformance of the `Standard` to the `OnboardingConstraint`.
 struct Consent: View {
-    @Environment(OnboardingNavigationPath.self) private var onboardingNavigationPath
-    
-    
-    private var consentDocument: Data {
+    @Environment(ManagedNavigationStack.Path.self) private var onboardingNavigationPath
+
+    private var consentText: String {
         guard let path = Bundle.main.url(forResource: "ConsentDocument", withExtension: "md"),
-              let data = try? Data(contentsOf: path) else {
-            return Data(String(localized: "CONSENT_LOADING_ERROR").utf8)
+              let text = try? String(contentsOf: path, encoding: .utf8) else {
+            return String(localized: "CONSENT_LOADING_ERROR")
         }
-        return data
+        return text
     }
-    
+
     var body: some View {
-        OnboardingConsentView(
-            markdown: {
-                consentDocument
-            },
-            action: {
+        OnboardingView {
+            VStack(alignment: .leading, spacing: 16) {
+                OnboardingTitleView(
+                    title: "Consent",
+                    subtitle: "Please read and accept the consent form."
+                )
+                ScrollView {
+                    Text(consentText)
+                        .font(.body)
+                        .padding(.horizontal)
+                }
+            }
+        } footer: {
+            OnboardingActionsView("I Agree") {
                 onboardingNavigationPath.nextStep()
             }
-        )
+        }
+        .navigationTitle(Text(verbatim: ""))
     }
 }
 
 
 #if DEBUG
 #Preview {
-    OnboardingStack {
+    ManagedNavigationStack {
         Consent()
     }
-        .previewWith(standard: TemplateApplicationStandard()) {
-            OnboardingDataSource()
-        }
+    .previewWith(standard: TemplateApplicationStandard()) {
+    }
 }
 #endif

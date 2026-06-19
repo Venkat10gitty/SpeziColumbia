@@ -69,7 +69,7 @@ final class FirebaseConfiguration: Module, DefaultInitializable, @unchecked Send
         }
         
         do {
-            try await accountService.login(userId: "lelandstanford@stanford.edu", password: "StanfordRocks!")
+            try await accountService.login(userId: "sea.lab.space@gmail.com", password: "Sense.Empower.Augment@42")
             return
         } catch {
             guard let accountError = error as? FirebaseAccountError,

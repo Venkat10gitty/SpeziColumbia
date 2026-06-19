@@ -27,16 +27,16 @@
   "testTargets" : [
     {
       "target" : {
-        "containerPath" : "container:TemplateApplication.xcodeproj",
+        "containerPath" : "container:SpeziColumbia.xcodeproj",
         "identifier" : "653A255C28338800005D4D48",
-        "name" : "TemplateApplicationTests"
+        "name" : "SpeziColumbiaTests"
       }
     },
     {
       "target" : {
-        "containerPath" : "container:TemplateApplication.xcodeproj",
+        "containerPath" : "container:SpeziColumbia.xcodeproj",
         "identifier" : "653A256628338800005D4D48",
-        "name" : "TemplateApplicationUITests"
+        "name" : "SpeziColumbiaUITests"
       }
     }
   ],

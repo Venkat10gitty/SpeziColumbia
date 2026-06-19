@@ -8,13 +8,14 @@
 
 @_spi(TestingSupport) import SpeziAccount
 import SpeziOnboarding
+import SpeziViews
 import SwiftUI
 
 
 struct AccountOnboarding: View {
-    @Environment(OnboardingNavigationPath.self) private var onboardingNavigationPath
-    
-    
+    @Environment(ManagedNavigationStack.Path.self) private var onboardingNavigationPath
+
+
     var body: some View {
         AccountSetup { _ in
             Task {
@@ -38,24 +39,26 @@ struct AccountOnboarding: View {
 
 #if DEBUG
 #Preview("Account Onboarding SignIn") {
-    OnboardingStack {
+    ManagedNavigationStack {
         AccountOnboarding()
     }
-        .previewWith {
-            AccountConfiguration(service: InMemoryAccountService())
-        }
+    .previewWith {
+        AccountConfiguration(service: InMemoryAccountService())
+    }
 }
 
 #Preview("Account Onboarding") {
-    var details = AccountDetails()
-    details.userId = "lelandstanford@stanford.edu"
-    details.name = PersonNameComponents(givenName: "Leland", familyName: "Stanford")
-    
-    return OnboardingStack {
+    let details: AccountDetails = {
+        var accountDetails = AccountDetails()
+        accountDetails.userId = "lelandstanford@stanford.edu"
+        accountDetails.name = PersonNameComponents(givenName: "Leland", familyName: "Stanford")
+        return accountDetails
+    }()
+    ManagedNavigationStack {
         AccountOnboarding()
     }
-        .previewWith {
-            AccountConfiguration(service: InMemoryAccountService(), activeDetails: details)
-        }
+    .previewWith {
+        AccountConfiguration(service: InMemoryAccountService(), activeDetails: details)
+    }
 }
 #endif
