@@ -585,7 +585,3 @@ BackendRouter.uploadObservation(...)
                                              ▼
                                            S3 Bucket
 ```
-
----
-
-*Document prepared for SpeziColumbia — Columbia University College Project*
